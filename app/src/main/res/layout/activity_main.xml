@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_color"
+        app:layout_constraintBottom_toTopOf="@+id/container"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/profile_image_iv"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded" />
+
+        <TextView
+            android:id="@+id/name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|bottom"
+            android:layout_marginTop="10dp"
+            android:text="@string/name"
+            android:textColor="@color/white"
+            android:textSize="26sp" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="start|bottom"
+            android:layout_marginStart="300dp"
+            android:layout_marginTop="12dp"
+            android:src="@drawable/img_1"
+            tools:ignore="ContentDescription" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:padding="10dp"
+        android:id="@+id/container"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="30dp"
+            android:text="@string/user_profile"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/user_name"
+            android:textColor="@color/green"
+            android:textSize="20sp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_corners"
+            android:drawableStart="@drawable/img_2"
+            android:hint="@string/enter_user_name"
+            android:id="@+id/user"
+            android:padding="10dp"
+            android:inputType="text"
+            tools:ignore="Autofill" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/email_id"
+            android:textColor="@color/green"
+            android:textSize="20sp" />
+
+        <EditText
+            android:inputType="textEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/rounded_corners"
+            android:drawableStart="@drawable/img_2"
+            android:hint="@string/enter_email"
+            android:id="@+id/email"
+            android:padding="10dp"
+            tools:ignore="Autofill" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginVertical="40dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/save"
+            android:textAllCaps="false"
+            android:textSize="24sp"
+            app:cornerRadius="15dp"
+            android:onClick="onButtonClick"/>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
